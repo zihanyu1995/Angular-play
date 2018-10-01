@@ -1,0 +1,34 @@
+<nav class="navbar navbar-dark bg-primary" >
+  <label class="navbar-brand">Profile</label>
+    <button class="navbar-brand glyphicon glyphicon-ok emptywhitebutton" (click)="update()" ></button>
+</nav>
+<div class="container">
+  <div class="row walk" ></div>
+  <form class="col-md-6 col-md-offset-3 ">
+    <fieldset class="form-group">
+      <label for="InputUsername">Username</label>
+      <input name="username" type="text" class="form-control" id="InputUsername"  [(ngModel)]="username" >
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="InputEmail1">Email</label>
+      <input name="email" type="email" class="form-control" id="InputEmail1" [(ngModel)]="email" >
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="InputFirstname">First Name</label>
+      <input name="firstname" type="text" class="form-control" id="InputFirstname" [(ngModel)]="firstname">
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="InputLastname">Last Name</label>
+      <input name="lastname" type="text" class="form-control" id="InputLastname" [(ngModel)]="lastname" >
+    </fieldset>
+      <button class="btn btn-primary col-md-12 col-xs-12" type="button" (click)="gotoweb()" >Websites</button>
+      <button class="btn btn-danger col-md-12 col-xs-12 walk" type="button" (click)="logout()">Logout</button>
+
+  </form>
+</div>
+<div >
+  <nav class="navbar navbar-dark navbar-fixed-bottom bg-primary" >
+    <button class="navbar-brand glyphicon glyphicon-user emptywhitebutton" (click)="gotopro()"></button>
+  </nav>
+</div>
+

@@ -1,0 +1,44 @@
+
+<nav class="navbar navbar-default" >
+  <button class="navbar-brand glyphicon glyphicon-chevron-left emptybutton" (click)="gotoback()"></button>
+  <label class="navbar-brand">Widgets</label>
+  <button class="navbar-brand glyphicon glyphicon-plus rightbutton" (click)="gotonew()"></button>
+</nav>
+<form class="col-md-6 col-md-offset-3" >
+  <div *ngFor="let widget of widgets; let i = index" >
+  <fieldset class="form-group" *ngIf="widget.widgetType=='HEADING'">
+    <nav class="navbar navbar-default" >
+      <button class=" glyphicon glyphicon-asterisk  abutton  " type="button" (click)="gotoedit(i,widget)"></button>
+      <label >{{widget.text}}</label>
+    </nav>
+  </fieldset>
+
+    <fieldset class="form-group" *ngIf="widget.widgetType=='HTML'">
+      <nav class="navbar navbar-default" >
+        <button class=" glyphicon glyphicon-asterisk  abutton  " type="button" (click)="gotoedit(i,widget)"></button>
+        <div [innerHTML]="widget.text"></div>
+      </nav>
+    </fieldset>
+
+  <fieldset class="form-group " *ngIf="widget.widgetType=='IMAGE'">
+    <nav class="navbar navbar-default" >
+      <button class=" glyphicon glyphicon-asterisk  abutton  " type="button" (click)="gotoedit(i)"></button>
+      <img class="img1" src="{{widget.url}}">
+    </nav>
+  </fieldset>
+
+  <fieldset class="form-group " *ngIf="widget.widgetType=='YOUTUBE'">
+    <div class="embed-responsive embed-responsive-16by9">
+      <button class=" glyphicon glyphicon-asterisk  abutton  " type="button" (click)="gotoedit(i)"></button>
+      <iframe width="560" height="315" [src]='sanitizer.bypassSecurityTrustResourceUrl(widget.url)' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </fieldset>
+  </div>
+</form>
+<div class="row jump"></div>
+<div class="body">
+  <nav class="navbar navbar-default navbar-fixed-bottom " >
+    <button id="user1" class="navbar-brand glyphicon glyphicon-user rightbutton " (click)="gotopro()" ></button>
+  </nav>
+</div>
+

@@ -1,0 +1,88 @@
+Quiz 3
+Select 10 out of 12
+
+Express
+
+1. Give a sample code to set up route that accepts get requests using express
+
+const express = require('express');
+const app = express();
+app.get('/api/website/:websiteId/page', findAllPagesForWebsite);
+
+2. What does app.listen() do in express and what are the parameters it accepts
+
+Starts a UNIX socket and listens for connections on the given path.
+It accepts the parameter of port number.
+
+3. How do we start the express server?
+
+type 'node [filename]' in console
+
+4. Write a code snippet to redirect from /hello to /hi in express with a status code of 200
+
+app.post('/hello', function(req, res) {
+    res.status(200).redirect('/hi');
+});
+
+5. What is response.end() used for in express?
+
+The end() method both sends the content of the response to the client and signals to the server that the response (header and content) has been sent completely.
+
+6. How do you set the type of response in express
+
+Use Content-Type, for example:
+res.set('Content-Type', 'text/plain');
+
+Node.js
+
+HTTP module, URL module
+1. Create a HTTP Server and listen on port 4000
+
+var http = require('http');
+http.createServer().listen(4000);
+
+2. Create a HTTP Server and when any request comes in, respond with text ‘Hello World’ and status code 200
+
+var http = require('http');
+http.createServer(function(req,res){
+   res.statusCode = 200;
+   res.write('Hello World');
+   res.end();
+
+}).listen(4000);
+
+3. Create a HTTP Server and when any request comes in, display request URL’s hostname and pathname
+
+var http = require('http');
+var url = require('url');
+
+http.createServer(function(req, res){
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.write("hostname：" + req.headers.host);
+    res.write("\n");
+    res.write("pathname：" + url.parse(req.url, true).pathname);
+    res.end();
+ 
+}).listen(3000);
+
+File System module, Process module
+1. Count the number of files in current directory
+
+const fs = require('fs');
+
+fs.readdir('', (err, files) => {
+  console.log(files.length);
+});
+
+2. Read text file ‘data.txt’ in the current directory and display its contents
+
+fs = require('fs')
+fs.readFile('data.txt', function (err,data) {
+  if (err) {
+    return console.log(err);
+  }
+  console.log(data);
+});
+
+
+3. Display the path of the current working directory

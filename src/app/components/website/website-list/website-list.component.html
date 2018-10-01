@@ -1,0 +1,16 @@
+<nav class="navbar navbar-dark bg-primary" >
+  <button class="navbar-brand glyphicon glyphicon-chevron-left whitebutton" (click)="gotoback()"></button>
+  <label class="navbar-brand">Websites</label>
+    <button class="navbar-brand glyphicon glyphicon-plus  emptywhitebutton" (click)="gotonew()"></button>
+</nav>
+<div *ngFor="let website of websites; let i = index">
+  <nav class="navbar navbar-light" >
+    <a  class="navbar-brand point" (click)="gotopage(i)">{{website.name}}</a>
+    <button class="navbar-brand glyphicon glyphicon-asterisk  emptybluebutton" (click)="gotoedit(i)"></button>
+  </nav>
+</div>
+<div>
+  <nav class="navbar navbar-dark navbar-fixed-bottom bg-primary" >
+    <button class="navbar-brand glyphicon glyphicon-user emptywhitebutton" (click)="gotopro()" ></button>
+  </nav>
+</div>

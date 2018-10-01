@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+
+.redb{
+  border:1px solid red;
+}
+
+.jump{
+  margin-top:70px;
+}
+a:hover{
+  text-decoration:none;
+}
+
+.point{
+  cursor:pointer;
+}
+
+#user1{
+  color:#428bca;
+  float:right ;
+  background:rgba(0, 0, 0, 0);
+  border-style:none;
+}
+.walk{
+  margin-top:15px;
+}
+.body{ margin-top: 150px; }
+.rightbutton{
+  float:right ;
+  background:rgba(0, 0, 0, 0);
+  border-style:none;
+}
+
+.abutton{
+  right: 0%;
+  z-index: 10;
+  background:white;
+  border-style:none;
+  position: absolute;
+}
+
+.emptybutton{
+  background:rgba(0, 0, 0, 0);
+  border-style:none;
+}
+
+.emptybluebutton{
+  color:#428bca;
+  float:right ;
+  background:rgba(0, 0, 0, 0);
+  border-style:none;
+}
+
+.emptywhitebutton{
+  color:white;
+  float:right ;
+  background:rgba(0, 0, 0, 0);
+  border-style:none;
+}
+.tb{
+  position:absolute; width: 1px;height:1000px;z-index:3; border-color:grey; border-right-style: solid; right: 67%;
+}
+
+.img1{
+
+
+  width:100%;
+
+  height: auto;
+
+}
+.whitebutton{
+  color:white;
+  background:rgba(0, 0, 0, 0);
+  border-style:none;
+}

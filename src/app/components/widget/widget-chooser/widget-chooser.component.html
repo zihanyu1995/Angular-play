@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default" >
+  <a [routerLink]="['/user/:uid/website/:wid/page/:pid/widget']" ><button class="navbar-brand glyphicon glyphicon-chevron-left emptybutton" ></button></a>
+  <label class="navbar-brand">Chooser Widget</label>
+</nav>
+<div *ngFor="let n of name; let i = index">
+  <nav class="navbar navbar-light" >
+    <a  class="navbar-brand point" (click)="gotoedit(i)">{{n}}</a>
+  </nav>
+</div>
+<div >
+  <nav class="navbar navbar-default navbar-fixed-bottom " >
+    <a [routerLink]="['/user/:uid']" ><button id="user1" class="navbar-brand glyphicon glyphicon-user rightbutton" ></button></a>
+  </nav>
+</div>
+

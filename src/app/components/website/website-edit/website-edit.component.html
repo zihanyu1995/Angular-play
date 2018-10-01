@@ -1,0 +1,54 @@
+<div class="col-md-4 hidden-xs">
+  <nav class="navbar navbar-dark bg-primary navbar-fixed-top col-md-4 " >
+    <button class="navbar-brand glyphicon glyphicon-chevron-left whitebutton" (click)="gotoback()"></button>
+    <label class="navbar-brand">Websites</label>
+      <button class="navbar-brand glyphicon glyphicon-plus  emptywhitebutton" (click)="gotonew()"></button>
+  </nav>
+  <div class="row jump" ></div>
+  <div *ngFor="let website of websites; let i = index">
+    <nav class="navbar navbar-light" >
+      <a  class="navbar-brand point" (click)="gotopage(i)">{{website.name}}</a>
+      <button class="navbar-brand glyphicon glyphicon-asterisk  emptybluebutton" (click)="gotoedit(i)"></button>
+    </nav>
+  </div>
+</div>
+
+<table  class="tb hidden-xs" frame="rhs">
+  <tr>
+    <td valign="top"></td>
+  </tr>
+</table>
+
+<div class="col-md-8">
+  <nav class="navbar navbar-dark bg-primary  navbar-fixed-top col-md-8 col-md-offset-4" >
+    <button class="whitebutton visible-xs-block navbar-brand glyphicon glyphicon-chevron-left " (click)="gotoback()"></button>
+    <label class="navbar-brand">Edit Website</label>
+      <button class="navbar-brand glyphicon glyphicon-ok  emptywhitebutton" (click)="update()"></button>
+  </nav>
+  <div class="row jump" ></div>
+  <form >
+    <div *ngIf="errorFlag"
+         class="alert alert-danger">
+      {{errorMsg}}
+    </div>
+    <fieldset class="form-group">
+      <label for="Username">Website Name</label>
+      <input name="name" type="text" class="form-control" id="Username"  placeholder="Name" value="Blogger"  [(ngModel)]="name">
+      <span class="help-block" *ngIf="errorFlag">
+        Name required!
+        </span>
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="tea">Website Description</label>
+      <textarea name="description" type="text" class="form-control" id="tea"  placeholder="Description" rows="5" [(ngModel)]="description">It's a website.</textarea>
+    </fieldset>
+    <button class="btn btn-danger col-md-12 col-xs-12 walk" type="button" (click)="delete()">Delete</button>
+  </form>
+</div>
+<div>
+  <nav class="navbar navbar-dark navbar-fixed-bottom bg-primary" >
+    <button class="navbar-brand glyphicon glyphicon-user emptywhitebutton" (click)="gotopro()" ></button>
+  </nav>
+</div>
+
+

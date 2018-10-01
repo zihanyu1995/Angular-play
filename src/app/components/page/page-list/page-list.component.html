@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default" >
+  <button class="navbar-brand glyphicon glyphicon-chevron-left emptybutton" (click)="gotoback()"></button>
+  <label class="navbar-brand">Pages</label>
+  <button class="navbar-brand glyphicon glyphicon-plus  rightbutton" (click)="gotonew()" ></button>
+</nav>
+<div *ngFor="let page of pages; let i = index">
+  <nav class="navbar navbar-light" >
+    <a  class="navbar-brand point" (click)="gotowid(i)">{{page.name}}</a>
+    <button class="navbar-brand glyphicon glyphicon-asterisk  emptybluebutton" (click)="gotoedit(i)"></button>
+  </nav>
+</div>
+<div>
+  <nav class="navbar navbar-default navbar-fixed-bottom " >
+    <button class="navbar-brand glyphicon glyphicon-user emptywhitebutton" (click)="gotopro()" ></button>
+  </nav>
+</div>

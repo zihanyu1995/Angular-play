@@ -1,0 +1,36 @@
+<div class="container " >
+  <div *ngIf="errorFlag"
+        class="alert alert-danger">
+  {{errorMsg}}
+  </div>
+  <div class="row jump">
+    <form class="col-md-6 col-md-offset-3 " (ngSubmit) = "login()" #f="ngForm">
+      <h3>Login</h3>
+      <fieldset class="form-group">
+        <input [ngClass]="{'redb':errorFlag}" type="text" class="form-control" name="username" placeholder="username" ngModel required #username="ngModel" >
+        <span class="help-block" *ngIf="errorFlag">
+        Please enter correct username!
+        </span>
+      </fieldset>
+      <fieldset class="form-group">
+        <input [ngClass]="{'redb':errorFlag}" type="password" class="form-control" name="password" placeholder="password" ngModel required #password="ngModel">
+      </fieldset>
+      <span class="help-block" *ngIf="!password.valid && password.touched">
+        Please enter password!
+      </span>
+      <span class="help-block" *ngIf="errorFlag">
+        Please enter correct password!
+      </span>
+        <button  class=" btn btn-primary btn-block walk" type="submit" [disabled]="!f.valid" >
+          login
+        </button>
+      <a  [routerLink]="['/register']">
+        <button class="btn btn-success btn-block walk"  type="button"  >register
+        </button>
+      </a>
+    </form>
+  </div>
+</div>
+
+
+

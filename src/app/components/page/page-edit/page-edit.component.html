@@ -1,0 +1,52 @@
+<div class="col-md-4 hidden-xs">
+  <nav class="navbar navbar-default navbar-fixed-top col-md-4 " >
+    <button class="emptybutton navbar-brand glyphicon  glyphicon-chevron-left " (click)="gotoback()"></button>
+    <label class="navbar-brand">Pages</label>
+    <button class="navbar-brand glyphicon glyphicon-plus rightbutton" (click)="gotonew()"></button>
+  </nav>
+  <div class="row jump" ></div>
+  <div *ngFor="let page of pages; let i = index">
+    <nav class="navbar navbar-light" >
+      <a  class="navbar-brand point" (click)="gotowid(i)">{{page.name}}</a>
+      <button class="navbar-brand glyphicon glyphicon-asterisk  emptybluebutton" (click)="gotoedit(i)"></button>
+    </nav>
+  </div>
+</div>
+
+<table  class="tb hidden-xs" frame="rhs">
+  <tr>
+    <td valign="top"></td>
+  </tr>
+</table>
+
+<div class="col-md-8">
+  <nav class="navbar navbar-default  navbar-fixed-top col-md-8 col-md-offset-4" >
+   <button class="emptybutton visible-xs-block navbar-brand glyphicon glyphicon-chevron-left " (click)="gotoback()"></button>
+    <label class="navbar-brand">Edit Page</label>
+    <button class="navbar-brand glyphicon glyphicon-ok rightbutton" (click)="update()"></button>
+  </nav>
+  <div class="row jump" ></div>
+  <form >
+    <div *ngIf="errorFlag"
+         class="alert alert-danger">
+      {{errorMsg}}
+    </div>
+    <fieldset class="form-group">
+      <label for="Username">Name</label>
+      <input name="name" type="text" class="form-control" id="Username"  placeholder="Page Name" value="Blog" [(ngModel)]="name">
+      <span class="help-block" *ngIf="errorFlag">
+        Name required!
+        </span>
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="tea">Title</label>
+      <input type="text" class="form-control" id="tea"  placeholder="Page Title" name="description" [(ngModel)]="description">
+    </fieldset>
+    <button class="btn btn-danger col-md-12 col-xs-12 walk" type="button" (click)="delete()">Delete</button>
+  </form>
+</div>
+<div>
+  <nav class="navbar navbar-default navbar-fixed-bottom " >
+    <button class="navbar-brand glyphicon glyphicon-user emptywhitebutton" (click)="gotopro()" ></button>
+  </nav>
+</div>
